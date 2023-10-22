@@ -1,19 +1,21 @@
-
-<div class="container">
-    <button routerLink="/admin-login">Admin login</button>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-        <div class="col" *ngFor="let i of products">
-            <div class="card m-2 h-10 w-100% p-3">
-                <img  style="width: -100%;height: 12rem;" src={{i.image}} class=" card-img-top"
-                    alt="img">
-                <div class="card-body">
-                    <h5 class="card-title">{{i.pname}}</h5>
-                    <h5 class="card-text">
-                       ₹ {{i.price}}
-                    </h5>
+<div class="main">
+    <div class="container">
+        <button class="btn admin-btn" routerLink="/admin-login">Admin login</button>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            <div class="col" *ngFor="let i of products">
+                <div class="card m-2 h-10 w-100% p-3">
+                    <img  style="width: -100%;height: 12rem;" src={{i.image}} class=" card-img-top"
+                        alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.pname}}</h5>
+                        <h5 class="card-text">
+                           ₹ {{i.price}}
+                        </h5>
+                    </div>
+                    <button class="view-btn btn " routerLink="product-view/{{i._id}}">View</button>
                 </div>
-                <button class="view-btn btn bg-success" routerLink="product-view/{{i._id}}">View</button>
             </div>
         </div>
     </div>
 </div>
+
