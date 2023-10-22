@@ -1,0 +1,15 @@
+.card-body{
+    display: flex;
+    justify-content: space-around;
+}
+.card img{
+    object-fit: cover;
+}
+.card{
+    color: #060606;
+    border: none;
+    background-color:rgb(223, 219, 219);
+}
+.container{
+    margin-top: 5rem;
+}

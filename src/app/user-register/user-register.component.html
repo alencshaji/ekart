@@ -1,0 +1,24 @@
+<div class="main">
+  <div class="my-form mt-2 mb-3 bg-dark">
+    <h1>Signup Form</h1>
+    <form [formGroup]="registerForm">
+      <div class="mb-3 mt-4">
+        <label for="Usename" class="form-label">Username</label>
+        <input type="password" formControlName="username" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 mt-4">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3 mt-4">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" formControlName="psw" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-light mt-3" (click)="register()">Signup</button>
+    </form>
+    <p class="mt-4">Already a member? <a routerLink="/user-login">Login now</a></p>
+  </div>
+</div>
+
+  
+ 

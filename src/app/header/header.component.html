@@ -1,0 +1,109 @@
+<nav class="navbar navbars navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand"><img src="https://i.postimg.cc/bvYfJDBf/the-fresh-market-logo.png" alt=""></a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+      <div class="navbar-nav">
+        <a href="#" class="nav-item nav-link active">Home</a>
+        <a href="#" class="nav-item nav-link">Profile</a>
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Inbox</a>
+            <a href="#" class="dropdown-item">Sent</a>
+            <a href="#" class="dropdown-item">Drafts</a>
+          </div>
+        </div>
+      </div>
+      <form class="d-flex">
+        <div class="input-group search-inp">
+          <input type="text" class="form-control" placeholder="Search">
+          <button type="button" class="btn btn-secondary"><i class="fa fa-solid fa-magnifying-glass"></i></button>
+          <!-- Button trigger modal -->
+          <button *ngIf="carti"  type="button" (click)=" cartitems()" class="btn btn-primary search-inp" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Cart {{count}}
+          </button>
+          <i  *ngIf="wish" (click)="wishList()" class="search-inp fa fa-solid fa-heart"></i>
+
+
+        </div>
+      </form>
+      <div class="navbar-nav d-flex">
+
+        <a *ngIf="!login" href="#" routerLink="/user-login" class="nav-item nav-link">Login/Signup</a>
+
+        <a  *ngIf="login"  class="nav-item nav-link" (click)="logout()">LogOut</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Your Shopping Cart
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+
+      <!-- ... (other modal content) ... -->
+
+      <div class="modal-body">
+        <table class="table table-image">
+          <thead>
+            <tr class="head-table">
+              <th scope="col"></th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of pdata; let i = index">
+              <td class="w-25">
+                <img [src]="product.image" class="img-fluid img-thumbnail" alt="Product Image">
+              </td>
+              <td>{{ product.pname }}</td>
+              <td>₹ {{ product.price }}</td>
+              <td class="qt">
+                <div class="qty">
+                  <button class="btn btn-sm btn-m " (click)="increment(product._id)" >+</button>
+                  {{ product.quantity }}
+                  <button class="btn btn-sm btn-m"(click)="decrement(product._id)" >-</button>
+                </div>
+               
+              </td>
+              
+              <td>{{ product.price * product.quantity }}</td>
+              <td>
+                <a href="#" class="btn btn-danger btn-sm">
+                  <i  (click)="remove(product._id)" >Remove</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-end">
+          <h5>Total: <span class="price text-success">₹ {{ totalPrice }}</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer border-top-0 d-flex justify-content-end">
+        <button type="button" class="btn btn-primary">CheckOut</button>
+      </div>
+    </div>
+  </div>
+</div>

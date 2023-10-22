@@ -1,0 +1,52 @@
+.table-image {
+
+  thead {
+
+    td,
+    th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
+
+  td,
+  th {
+    vertical-align: middle;
+    text-align: center;
+
+    &.qty {
+      max-width: 2rem;
+    }
+  }
+}
+.navbar-brand img{
+  height: 2rem;
+}
+.navbars{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn-m {
+  border: black 1px solid;
+}
+.search-inp{
+  margin-left: 1rem !important;
+}
+

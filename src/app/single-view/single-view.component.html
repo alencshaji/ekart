@@ -1,0 +1,58 @@
+<div class="container-fluid mt-2 mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-5 pr-2">
+      <div class="card">
+        <div class="demo">
+          <ul id="lightSlider">
+            <li> <img src={{pdata.image}} /> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mt-2">
+        <!-- <div class="d-flex flex-row align-items-center">
+          <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+            <iclass="fa fa-star"></iclass=> 
+          </div>
+           <span class="ml-1">5.0</span>
+        </div> -->
+        <div class="about"> <span class="font-weight-bold">{{pdata.pname}}</span>
+          <h4 class="font-weight-bold">₹ {{pdata.price}}</h4>
+        </div>
+        <div class="buttons"> 
+          <button class="btn btn-outline-warning btn-long cart" (click)="addToCart() ">Add to Cart</button>
+          <button class="btn btn-light wishlist" (click)="addtoWishlist() ">
+            <i class="fa fa-heart"></i> </button>
+        </div>
+        <hr>
+        <div class="product-description">
+          <div class="d-flex flex-row align-items-center">
+            <i class="fa fa-calendar-check-o"></i> <span class="ml-1 ms-1"> Delivery in 1 day</span>
+          </div>
+          <div class="d-flex flex-row align-items-center"> <img
+              src="https://i.postimg.cc/bvYfJDBf/the-fresh-market-logo.png" class="rounded-circle store-image">
+            <div class="d-flex flex-column ml-1 comment-profile">
+              <span class="username">Fresh Market</span>
+              <small class="followers">Trusted</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card mt-2"> <span>Similar items:</span>
+        <div class="similar-products mt-2 d-flex flex-row flex-wrap">
+          <div *ngFor="let i of similarP" class="card border p-1 col-lg-3 col-md-4 col-sm-6" style="width: 9rem;"> 
+            <img src={{i.image}}
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title text-center ">
+                <button class="btn btn-sm">View </button>
+              </h6>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

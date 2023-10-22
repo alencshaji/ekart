@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="text-center">
+        <h1>Manage User</h1>
+        <table  class="table table-success table-hover table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of uData,let j = index">
+                <th scope="row">{{j+1}}</th>
+                <td>{{i.username}}</td>
+                <td>{{i.email}}</td>
+                <td (click)="delete(i._id)">
+                  <i  class="fa fa-solid fa-trash"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+

@@ -1,0 +1,15 @@
+.btns{
+    margin: 5rem;
+}
+button{
+    margin: 1rem;
+}
+.main{
+    margin-bottom: 15rem;
+}
+.container{
+    margin-top: 5rem;
+}
+.btns button{
+    border: black 1px solid;
+}

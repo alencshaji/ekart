@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="text-center">
+      <div class="main d-flex flex-space-around">
+        <h1>Manage Products</h1>
+       
+       
+      </div>
+      
+        <table  class="table table-success table-hover table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Product name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">image</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of pdata, let j = index">
+                <th scope="row">{{j+1}}</th>
+                <td>{{i.pname}}</td>
+                <td>{{i.category}}</td>
+                <td>{{i.price}}</td>
+                <td><img  style="width: 3rem; height: 2rem;"  src={{i.image}}></td>
+                <td>
+                  <button class="me-2" (click)="edit(i._id)">Edit</button>
+                  <button class="me-2"  (click)="delete(i._id)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+           <button class="p-1 ms-1" routerLink="/admin-addProduct">Add New Product</button>
+           <button class="p-1 ms-1" routerLink="/admin-home">Back</button>
+    </div>
+    
+</div>
+

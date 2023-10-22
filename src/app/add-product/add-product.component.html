@@ -1,0 +1,28 @@
+  <div class="title">
+    <h1>Add Product</h1>
+  </div>
+  <form [formGroup]="addProductForm">
+    <div class="form-field">
+      <label for="fullname">Product Name</label>
+      <input type="text" formControlName="pname" class="pname" name="pname" placeholder="Product Name" required autofoucus>
+    </div>
+    <div class="form-field">
+      <label for="category">Category</label>
+      <input type="text" formControlName="category" class="category" name="category" placeholder="Category" required>
+    </div>
+    <div class="form-field">
+      <label for="price">Price</label>
+      <input type="text" formControlName="price" class="price" name="price" placeholder="Price"  required >
+    </div>
+    <div class="form-field">
+      <label for="price">Image Url</label>
+      <input type="text" formControlName="image" class="image" name="image" placeholder="Image Url"  required >
+    </div>
+    <div class="form-fied">
+      <div>
+        <input type="submit" class="me-2" name="submit" routerLink="/admin-home"  value="Home">
+        <input type="submit" name="submit" routerLink="/admin-productmng"  value="Back">
+      </div>
+      <input type="submit" name="submit" class="submit"  (click)="addNewproduct()" value="Add">
+    </div>
+  </form>

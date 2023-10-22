@@ -1,0 +1,21 @@
+<div class="title">
+    <h1>Edit Product</h1>
+  </div>
+  <form (ngSubmit)="update()">
+    <div class="form-field">
+      <label for="pname">Product Name</label>
+      <input type="text" class="pname" name="pname" [(ngModel)]="pdata.pname" required autofocus>
+    </div>
+    <div class="form-field">
+      <label for="category">Category</label>
+      <input type="text" class="category" name="category" [(ngModel)]="pdata.category" required>
+    </div>
+    <div class="form-field">
+      <label for="price">Price</label>
+      <input type="text" class="price" name="price" [(ngModel)]="pdata.price" required>
+    </div>
+    <div class="form-field btn">
+      <input type="submit" name="submit" class="submit" (click)="update()" value="Update Product">
+    </div>
+  </form>
+  
